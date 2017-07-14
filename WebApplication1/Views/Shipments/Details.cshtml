@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.Shipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departure_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Arrival_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Arrival_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo.CargoId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo.CargoId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warehouse.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warehouse.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warehouse1.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warehouse1.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShipmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

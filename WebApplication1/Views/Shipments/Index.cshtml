@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication1.Models.Shipment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Departure_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Arrival_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.CargoId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warehouse.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Warehouse1.Location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departure_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Arrival_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo.CargoId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warehouse.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Warehouse1.Location)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShipmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShipmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ShipmentId })
+        </td>
+    </tr>
+}
+
+</table>
